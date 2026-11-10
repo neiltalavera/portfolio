@@ -3,6 +3,11 @@
   "name": "neil-talavera",
   "main": "./src/worker.ts",
   "compatibility_date": "2026-11-10",
+  "vars": {
+    "CONTACT_EMAIL_MAX": "254",
+    "CONTACT_TITLE_MAX": "120",
+    "CONTACT_MESSAGE_MAX": "1500"
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
