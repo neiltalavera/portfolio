@@ -52,15 +52,15 @@ function contactMiddleware(webhook: string, limits: ContactLimits): Plugin {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const publicProfile = {
-    linkedIn: env.LINKED_IN ?? 'https://www.linkedin.com/in/neil-talavera',
-    github: env.GITHUB ?? 'https://github.com/neiltalavera',
-    morrowlog: env.MORROWLOG ?? 'https://morrowlog.snlc.workers.dev/',
-    gymTypescript: env.GYM_TYPESCRIPT ?? 'https://gym-typescript-cav.pages.dev/',
+    linkedIn: env.LINKED_IN ?? '',
+    github: env.GITHUB ?? '',
+    morrowlog: env.MORROWLOG ?? '',
+    gymTypescript: env.GYM_TYPESCRIPT ?? '',
   }
   const limits = getContactLimits(env)
 
   return {
-    plugins: [react(), contactMiddleware(env.DISCORD_WEBHOOK ?? 'https://discord.com/api/webhooks/1569593545978019943/2GNQmuW96DvglWFl8TCPKQkbCT53vY-GOIJR-eS_Eflcsm9O2iySdTWbbrALb_NEM-Jf', limits)],
+    plugins: [react(), contactMiddleware(env.DISCORD_WEBHOOK ?? '', limits)],
     envPrefix: 'NEIL_PUBLIC_',
     define: {
       'import.meta.env.PUBLIC_PROFILE': JSON.stringify(publicProfile),
