@@ -8,6 +8,9 @@
     "CONTACT_TITLE_MAX": "120",
     "CONTACT_MESSAGE_MAX": "1500"
   },
+  "secrets": {
+    "required": ["DISCORD_WEBHOOK"]
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
